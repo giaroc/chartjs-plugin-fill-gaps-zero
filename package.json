@@ -1,0 +1,24 @@
+{
+  "name": "chartjs-plugin-fill-gaps-zero",
+  "version": "1.0.0",
+  "description": "Chart.js plugin to fill gaps with zero in X time axis for line chart",
+  "main": "src/chartjs-plugin-fill-gaps-zero.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/giaroc/chartjs-plugin-fill-gaps-zero.git"
+  },
+  "keywords": [
+    "chartjs",
+    "plugin",
+    "fill-gaps"
+  ],
+  "author": "Giacomo Rocco",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/giaroc/chartjs-plugin-fill-gaps-zero/issues"
+  },
+  "homepage": "https://github.com/giaroc/chartjs-plugin-fill-gaps-zero#readme"
+}
