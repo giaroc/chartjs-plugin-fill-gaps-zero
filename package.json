@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/giaroc/chartjs-plugin-fill-gaps-zero/issues"
   },
-  "homepage": "https://github.com/giaroc/chartjs-plugin-fill-gaps-zero#readme"
+  "homepage": "https://github.com/giaroc/chartjs-plugin-fill-gaps-zero#readme",
+  "dependencies": {
+    "moment": "^2.29.4"
+  }
 }

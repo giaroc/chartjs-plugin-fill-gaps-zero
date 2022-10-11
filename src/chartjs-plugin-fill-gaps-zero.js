@@ -6,6 +6,10 @@
  * Released under the MIT license
  * https://github.com/giaroc/chartjs-plugin-fill-gaps-zero
  *
+ * This work is intended to support Chart.js 3.X.X.
+ * It is based on the work done by @cyberbeat. Here is the repository:
+ * https://github.com/cyberbeat/ChartJSTimescaleFillWithZerosPlugin
+ *
  */
 var fillGapsWithZeroPlugin = {
     id: 'chartjs-plugin-fill-gaps-zero',
@@ -17,15 +21,20 @@ var fillGapsWithZeroPlugin = {
         /* If time object not exists or we are not filling gaps with 0s, abort */
         if (!timeAxis || !timeAxis.fillGapsWithZero) return;
 
-        var min, max, newLabels = [], newData = [], assoc = {};
+        var min, max, newLabels, newData, assoc = {};
 
-        /*
-        Loop through the dates (config labels).
-        Find the min and max date, and add all dates/values to assoc.
-        */
+
         var dates = c.data.labels;
 
+        /*
+        Loop through datasets.
+        */
         for (var index = 0; index < c.data.datasets.length; index++) {
+
+            /*
+            Loop through the dates (config labels).
+            Find the min and max date, and add all dates/values to assoc.
+            */
             for (var i = 0; i < dates.length; i++) {
 
                 /* Current date */
@@ -48,9 +57,11 @@ var fillGapsWithZeroPlugin = {
             }
         }
 
+        /* If no dates (min and max still undefined) breaks */
         if (min !== undefined && max !== undefined) {
-
+            /* loop datasets */
             for (var d_index = 0; index < c.data.datasets.length; index++) {
+                /* initialize data and labels */
                 newData = [];
                 newLabels = [];
                 /* From the min date, and looping by minUnit until max date */
