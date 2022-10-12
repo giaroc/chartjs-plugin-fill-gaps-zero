@@ -2,6 +2,10 @@
 
 This plugin fill gaps with zero in X time axis for line Chart. Made for Chart.js **3.X**
 
+## Demo
+
+[Demo](https://giaroc.github.io/chartjs-plugin-fill-gaps-zero/samples/demo/)
+
 ## Installation
 
 #### Load directly in the browser
