@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chartjs-plugin-labels</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="style.css"><!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@^2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment@^1"></script>
+    <script src="https://cdn.jsdelivr.net/gh/giaroc/chartjs-plugin-fill-gaps-zero/src/chartjs-plugin-fill-gaps-zero.min.js"></script>
+</head>
+<body>
+<div id="header">
+    <h1>chartjs-plugin-fill-gaps-zero</h1>
+    <a href="https://github.com/giaroc/chartjs-plugin-fill-gaps-zero"><img
+            style="position: absolute; top: 0; right: 0; border: 0;"
+            src="https://github-camo.global.ssl.fastly.net/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67"
+            alt="Fork me on GitHub"
+            data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
+</div>
+<div id="body">
+    <div id="description">
+        <p>
+            Chart.js plugin - This plugin fill gaps with zero in X time axis for line chart.
+        </p>
+    </div>
+    <div class="m-3">
+        <div class="row">
+            <div class="col-md-6">
+                <canvas id="chart-with-plugin"></canvas>
+            </div>
+            <div class="col-md-6 code">
+              <pre class="brush: js">
+                {
+                    x: {
+                            fillGapsWithZero: true,
+                            minUnit: 'day',
+                            type: 'time',
+                            time: {
+                                unit: 'day'
+                            },
+                            grid: {
+                                display: false
+                        }
+                }
+              </pre>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <canvas id="chart-without-plugin"></canvas>
+            </div>
+            <div class="col-md-6 code">
+                  <pre class="brush: js">
+                    {
+                        x: {
+                                fillGapsWithZero: false,
+                                minUnit: 'day',
+                                type: 'time',
+                                time: {
+                                    unit: 'day'
+                                },
+                                grid: {
+                                    display: false
+                            }
+                    }
+                  </pre>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="footer">
+    © 2022 chartjs-plugin-fill-gaps-zero Demo
+</div>
+<script>
+    const COLOR_LIST = [
+        {
+            "color": "#00e096",
+            "opacity": "rgba(0,224,150,0.55)"
+        },
+        {
+            "color": "#0095ff",
+            "opacity": "rgba(0,149,255,0.55)"
+        }];
+
+    function createChart(id, options) {
+        var data = {
+            labels: [
+                "2022-09-13T02:00:00",
+                "2022-09-14T02:00:00",
+                "2022-09-15T02:00:00",
+                "2022-09-16T02:00:00",
+                "2022-09-17T02:00:00",
+                "2022-09-18T02:00:00",
+                "2022-09-19T02:00:00",
+                "2022-09-20T02:00:00",
+                "2022-09-21T02:00:00",
+                "2022-10-10T02:00:00",
+                "2022-10-11T02:00:00"
+            ],
+            datasets: [
+                {
+                    data: [
+                        0,
+                        30,
+                        360,
+                        0,
+                        0,
+                        0,
+                        0,
+                        29,
+                        12,
+                        1,
+                        0
+                    ],
+                    label: "Senior",
+                    backgroundColor: COLOR_LIST[0].opacity,
+                    borderColor: COLOR_LIST[0].color,
+                    pointRadius: 8,
+                    fill: true
+                },
+                {
+                    data: [
+                        70,
+                        1560,
+                        3672,
+                        6,
+                        26,
+                        26,
+                        476,
+                        1838,
+                        542,
+                        789,
+                        708
+                    ],
+                    label: "Junior",
+                    backgroundColor: COLOR_LIST[1].opacity,
+                    borderColor: COLOR_LIST[1].color,
+                    pointRadius: 8,
+                    fill: true
+                }
+            ]
+        };
+
+        new Chart(document.getElementById(id), {
+            type: 'line',
+            data: data,
+            options: options
+        });
+    }
+
+    createChart('chart-with-plugin', {
+        scales: {
+            x: {
+                fillGapsWithZero: true,
+                minUnit: 'day',
+                type: 'time',
+                time: {
+                    unit: 'day'
+                },
+                grid: {
+                    display: false
+                }
+            },
+            y: {
+                grid: {
+                    display: false
+                }
+            }
+        },
+        elements: {
+            line: {
+                tension: .3
+            }
+        }
+    });
+    createChart('chart-without-plugin', {
+        scales: {
+            x: {
+                fillGapsWithZero: false,
+                minUnit: 'day',
+                type: 'time',
+                time: {
+                    unit: 'day'
+                },
+                grid: {
+                    display: false
+                }
+            },
+            y: {
+                grid: {
+                    display: false
+                }
+            }
+        },
+        elements: {
+            line: {
+                tension: .3
+            }
+        }
+    });
+
+</script>
+
+</body>
+</html>
