@@ -4,7 +4,23 @@ This plugin fill gaps with zero in X time axis for line Chart. Made for Chart.js
 
 ## Installation
 
-TBD
+#### Load directly in the browser
+
+Load ChartJS first, then the plugin which will automatically register itself with ChartJS
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/giaroc/chartjs-plugin-fill-gaps-zero/src/chartjs-plugin-fill-gaps-zero.min.js"></script>
+```
+
+#### Download
+[Compress](https://cdn.jsdelivr.net/gh/giaroc/chartjs-plugin-fill-gaps-zero/src/chartjs-plugin-fill-gaps-zero.min.js)  
+[Uncompress](https://raw.githubusercontent.com/giaroc/chartjs-plugin-fill-gaps-zero/main/src/chartjs-plugin-fill-gaps-zero.js)
+
+## NPM
+You can also install chartjs-plugin-labels by using node.js.
+
+    npm install chartjs-plugin-labels
 
 ## Configuration
 
