@@ -17,7 +17,7 @@ Load ChartJS first, then the plugin which will automatically register itself wit
 [Compress](https://cdn.jsdelivr.net/gh/giaroc/chartjs-plugin-fill-gaps-zero/src/chartjs-plugin-fill-gaps-zero.min.js)  
 [Uncompress](https://raw.githubusercontent.com/giaroc/chartjs-plugin-fill-gaps-zero/main/src/chartjs-plugin-fill-gaps-zero.js)
 
-## NPM
+#### NPM
 You can also install chartjs-plugin-labels by using node.js.
 
     npm install chartjs-plugin-labels
