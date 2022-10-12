@@ -14,7 +14,6 @@
 var fillGapsWithZeroPlugin = {
     id: 'chartjs-plugin-fill-gaps-zero',
     beforeUpdate: function (c) {
-
         /* Get time object if exists */
         var timeAxis = c.options.scales.x;
 
@@ -60,13 +59,15 @@ var fillGapsWithZeroPlugin = {
         /* If no dates (min and max still undefined) breaks */
         if (min !== undefined && max !== undefined) {
             /* loop datasets */
-            for (var d_index = 0; index < c.data.datasets.length; index++) {
+            for (var d_index = 0; d_index < c.data.datasets.length; d_index++) {
+
+                let new_min = min.clone();
+                let new_max = max.clone();
                 /* initialize data and labels */
                 newData = [];
                 newLabels = [];
                 /* From the min date, and looping by minUnit until max date */
-                for (var d = min; max.diff(d) >= 0; d.add(1, timeAxis.minUnit)) {
-
+                for (var d = new_min.clone(); new_max.diff(d) >= 0; d.add(1, timeAxis.minUnit)) {
                     /* Current date */
                     var cur = d.format(timeAxis.parser);
 
@@ -82,7 +83,6 @@ var fillGapsWithZeroPlugin = {
 
                 /* Replace the labels */
                 c.data.labels = newLabels;
-
                 /* Replace the data */
                 c.data.datasets[d_index].data = newData;
             }
@@ -105,4 +105,5 @@ if (typeof window !== 'undefined' && window.Chart) {
 // Otherwise, try to export the plugin
 try {
     module.exports = exports = fillGapsWithZeroPlugin;
-} catch (e) {}
+} catch (e) {
+}
