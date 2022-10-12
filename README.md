@@ -18,9 +18,9 @@ Load ChartJS first, then the plugin which will automatically register itself wit
 [Uncompress](https://raw.githubusercontent.com/giaroc/chartjs-plugin-fill-gaps-zero/main/src/chartjs-plugin-fill-gaps-zero.js)
 
 #### NPM
-You can also install chartjs-plugin-labels by using node.js.
+You can also install **chartjs-plugin-fill-gaps-zero** by using node.js.
 
-    npm install chartjs-plugin-labels
+    npm install chartjs-plugin-fill-gaps-zero
 
 ## Configuration
 
