@@ -4,7 +4,8 @@
   "description": "Chart.js plugin to fill gaps with zero in X time axis for line chart",
   "main": "src/chartjs-plugin-fill-gaps-zero.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode=production"
   },
   "repository": {
     "type": "git",
@@ -23,5 +24,9 @@
   "homepage": "https://github.com/giaroc/chartjs-plugin-fill-gaps-zero#readme",
   "dependencies": {
     "moment": "^2.29.4"
+  },
+  "devDependencies": {
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
   }
 }
