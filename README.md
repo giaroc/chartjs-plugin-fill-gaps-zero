@@ -2,6 +2,8 @@
 
 The chartjs-plugin-fill-gaps-zero plugin serves the purpose of filling missing elements in a line time chart's X-axis with zero values. It is designed for compatibility with Chart.js versions **3.X** and **4.X**.
 
+[![](https://data.jsdelivr.com/v1/package/npm/chartjs-plugin-fill-gaps-zero/badge)](https://www.jsdelivr.com/package/npm/chartjs-plugin-fill-gaps-zero)
+
 ## Demo
 
 [Demo](https://giaroc.github.io/chartjs-plugin-fill-gaps-zero/samples/demo/)
