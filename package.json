@@ -1,7 +1,7 @@
 {
   "name": "chartjs-plugin-fill-gaps-zero",
-  "version": "1.0.0",
-  "description": "Chart.js plugin to fill gaps with zero in X time axis for line chart",
+  "version": "1.0.3",
+  "description": "Enhance Chart.js line charts by seamlessly filling gaps in the X-axis time intervals with zero values, ensuring accurate representation of data trends and patterns.",
   "main": "src/chartjs-plugin-fill-gaps-zero.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

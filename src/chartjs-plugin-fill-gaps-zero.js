@@ -1,6 +1,6 @@
 /*!
  * chartjs-plugin-fill-gaps-zero.js
- * Version: 1.0.2
+ * Version: 1.0.3
  *
  * Copyright 2024 Giacomo Rocco
  * Released under the MIT license
